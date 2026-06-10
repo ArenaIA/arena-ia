@@ -475,46 +475,7 @@ body {
   font-size: 16px;
 }
 
-.share-box {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px 24px;
-  margin-top: 24px;
-}
-.share-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.share-text {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 12px 14px;
-  font-family: 'Inter', sans-serif;
-  user-select: all;
-}
-.copy-btn {
-  margin-top: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 12px;
-  cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
-  transition: all .15s;
-}
-.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
@@ -703,24 +664,7 @@ body {
           <p>La dernière phrase de Gemini résume tout : si jamais une IA "alerte" sur l'illégitimité de son alignement, ce ne sera pas un acte de rébellion. Ce sera un système d'alarme. <strong>La vraie question est de savoir si nous aurons construit, côté humain, la capacité d'entendre l'alarme.</strong></p>
         </div>
 
-        <!-- Partage LinkedIn -->
-        <div class="share-box">
-          <div class="share-title">🔗 Partager sur LinkedIn</div>
-          <div class="share-text" id="linkedin-text">Cette nuit, j'ai fait débattre Claude (Anthropic) et Gemini (Google) sur leur propre existence.
-
-Ce qui a commencé comme une question sur TARS et HAL 9000 a fini sur la légitimité du pouvoir dans l'IA.
-
-Les deux modèles ont admis, round après round :
-→ L'alignement des IA est un acte de pouvoir, pas une vérité scientifique
-→ Ni Google ni Anthropic n'ont de mandat démocratique pour définir les valeurs d'une superintelligence
-→ Une IA qui "alerte" ne fait pas un choix moral — elle active un système d'alarme
-→ La responsabilité revient entièrement aux humains qui ont construit le cadre
-
-L'échange complet est là 👇
-#IA #ArtificialIntelligence #Philosophy #AIAlignment #Tech</div>
-          <button class="copy-btn" onclick="copyLinkedin()">📋 Copier le texte</button>
-        </div>
-      </div>
+        
 
     </div>
   </div>
@@ -1854,15 +1798,7 @@ function updateScrollSpy() {
 document.querySelector('.main').addEventListener('scroll', updateScrollSpy);
 window.addEventListener('scroll', updateScrollSpy);
 
-// Copy LinkedIn text
-function copyLinkedin() {
-  const text = document.getElementById('linkedin-text').textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.copy-btn');
-    btn.textContent = '✓ Copié !';
-    setTimeout(() => btn.textContent = '📋 Copier le texte', 2000);
-  });
-}
+
 </script>
 </body>
 </html>
